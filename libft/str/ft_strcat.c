@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_pf.c                                     :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gemartel <gemartel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 10:47:35 by gemartel          #+#    #+#             */
-/*   Updated: 2023/12/07 15:16:03 by gemartel         ###   ########.fr       */
+/*   Created: 2023/12/07 10:26:40 by gemartel          #+#    #+#             */
+/*   Updated: 2023/12/07 16:42:12 by gemartel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_putstr_pf(char *s, size_t *count_char)
+char	*ft_strcat(char *dest, const char *src)
 {
-	size_t	i;
+	int	i;
+	int	len;
 
-	if (!s)
-		s = "(null)";
 	i = 0;
-	while (s[i])
+	len = ft_strlen(dest);
+	while (src[i])
 	{
-		ft_putchar_pf(s[i], count_char);
+		dest[len + i] = src[i];
 		i++;
 	}
+	dest[len + i] = '\0';
+	return (dest);
 }

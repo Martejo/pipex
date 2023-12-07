@@ -6,11 +6,11 @@
 /*   By: gemartel <gemartel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 17:59:09 by gemartel          #+#    #+#             */
-/*   Updated: 2023/12/04 14:36:36 by gemartel         ###   ########.fr       */
+/*   Updated: 2023/12/07 16:17:04 by gemartel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../get_next_line.h"
+#include "../libft.h"
 
 char	*extract_line(char *s, char *buffer)
 {
@@ -114,86 +114,3 @@ char	*get_next_line(int fd)
 		return (str);
 	return (read_line(fd, str, buffer));
 }
-/*#include <stdio.h>
-#include <fcntl.h>
-int main()
-{
-    #include <stdio.h>
-    #include <strings.h>
-    printf("BUFFER SIZE choosed = %d\n", BUFFER_SIZE);
-
-    int fds[3]; 
-    fds[0] = open("test.txt", O_RDONLY);
-    fds[1] = open("test1.txt", O_RDONLY);
-    fds[2] = open("test2.txt", O_RDONLY);
-
-    if (fds[0] == -1 || fds[1] == -1 || fds[2] == -1)
-        return(printf("erreur open fds"), 1);
-    char *line = NULL;
-
-    line = get_next_line(fds[0]);
-    printf("fd[0]%s", line);
-    free(line);
-    line = NULL;
-
-    line = get_next_line(fds[0]);
-    printf("fd[0]%s", line);
-    free(line);
-    line = NULL;
-
-    line = get_next_line(fds[1]);
-    printf("fd[1]%s", line);
-    free(line);
-    line = NULL;
-    line = get_next_line(fds[2]);
-    printf("fd[2]%s", line);
-    free(line);
-    line = NULL;
-
-
-    line = get_next_line(fds[0]);
-    printf("fd[0]%s", line);
-    free(line);
-    line = NULL;
-
-    line = get_next_line(fds[1]);
-    printf("fd[1]%s", line);
-    free(line);
-    line = NULL;
-    line = get_next_line(fds[2]);
-    printf("fd[2]%s", line);
-    free(line);
-    line = NULL;
-
-
-    line = get_next_line(fds[0]);
-    printf("fd[0]%s", line);
-    free(line);
-    line = NULL;
-
-    line = get_next_line(fds[1]);
-    printf("fd[1]%s", line);
-    free(line);
-    line = NULL;
-    line = get_next_line(fds[2]);
-    printf("fd[2]%s", line);
-    free(line);
-    line = NULL;
-
-
-    line = get_next_line(fds[0]);
-    printf("fd[0]%s", line);
-    free(line);
-    line = NULL;
-
-    line = get_next_line(fds[1]);
-    printf("fd[1]%s", line);
-    free(line);
-    line = NULL;
-    line = get_next_line(fds[2]);
-    printf("fd[2]%s", line);
-    free(line);
-    line = NULL;
-    return (0);
-}
-*/

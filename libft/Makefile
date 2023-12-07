@@ -48,6 +48,7 @@ SRCS	=	\
 			str/ft_strrchr.c \
 			str/ft_striteri.c \
 			str/ft_strcmp.c \
+			str/ft_strcat.c\
 			\
 			gnl/get_next_line.c\
 			gnl/get_next_line_utils.c\
@@ -67,19 +68,20 @@ CC	= gcc
 
 CFLAGS	= -Wall -Wextra -Werror
 
-RM	= rm -f
+RM	= rm -rf
 
 
 %.o:	%.c libft.h get_next_line.h ft_printf.h
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-		ar rc ${NAME} ${OBJS}
+		@ar rc ${NAME} ${OBJS}
+		@mv ${OBJS} obj/
 
-all:		${NAME}
+all:	${NAME}
 
 clean:
-		${RM} ${OBJS} ${OBJS_BONUS}
+		${RM} obj/*.o
 
 fclean:		clean
 		${RM} ${NAME}

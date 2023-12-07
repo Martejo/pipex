@@ -6,11 +6,11 @@
 /*   By: gemartel <gemartel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:46:24 by gemartel          #+#    #+#             */
-/*   Updated: 2023/12/04 14:38:40 by gemartel         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:15:55 by gemartel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libft.h"
 
 void	print_ptr_addr(void *ptr, size_t *count_char)
 {

@@ -6,11 +6,11 @@
 /*   By: gemartel <gemartel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:40:26 by gemartel          #+#    #+#             */
-/*   Updated: 2023/12/04 14:36:32 by gemartel         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:13:25 by gemartel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../get_next_line.h"
+#include "../libft.h"
 
 size_t	gnl_ft_strlen(char *s)
 {

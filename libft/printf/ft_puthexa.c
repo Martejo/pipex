@@ -6,11 +6,11 @@
 /*   By: gemartel <gemartel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:45:58 by gemartel          #+#    #+#             */
-/*   Updated: 2023/12/04 14:38:32 by gemartel         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:15:44 by gemartel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libft.h"
 
 void	ft_puthexa_upper(unsigned int nbr, size_t *count_char)
 {

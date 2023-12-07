@@ -6,30 +6,36 @@ CFLAGS = -Werror -Wall -Wextra
 
 RM = rm -rf
 
-SRCS = 	pipex.c\
-		utils.c\
-		error.c\
-		settings.c\
+SRCS = 	srcs/pipex.c\
+		srcs/parsing.c\
+		srcs/error.c\
+		srcs/settings.c\
+		srcs/handler.c\
 		libft/libft.a\
+	
 
 OBJS	= ${SRCS:.c=.o}
+LIBFT	= make all -C libft/
 
 
-%.o: %.c  pipex.h
-	${CC} ${CFLAGS} -I libft -c $< -o $@
-
+%.o: %.c  include/pipex.h
+	@${CC} ${CFLAGS} -Iinclude -Ilibft/ -c $< -o $@
+	
 ${NAME}: ${OBJS}
-	make all -C libft
-	${CC} ${CFLAGS} -I libft -o $@ $^ libft/libft.a
+	${CC} ${CFLAGS} -Iinclude -Ilibft/ -o $@ $^ -Llibft/
 
-all : $(NAME)
+all : libft $(NAME)
 
 fclean : clean
 	$(RM) $(NAME)
-	make fclean -C libft
+	@make -s fclean -C libft/
 
 clean :
-	$(RM) $(NAME) $(OBJS)
+	$(RM) $(OBJS)
 	
-
 re : fclean all
+
+libft:
+	@make -s all -C libft/
+
+.PHONY: all clean fclean re libft
